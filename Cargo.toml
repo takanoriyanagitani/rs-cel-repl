@@ -1,0 +1,47 @@
+[package]
+name = "rs-cel-repl"
+version = "0.1.0"
+edition = "2024"
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+
+[[bin]]
+name = "cel-repl"
+
+[dependencies.clap]
+version = "4"
+default-features = false
+features = [
+	"color",
+	"error-context",
+	"help",
+	"std",
+	"suggestions",
+	"usage",
+	"derive",
+]
+
+[dependencies.serde_json]
+version = "1"
+default-features = false
+features = [
+	"std",
+]
+
+[dependencies.cel]
+version = "0"
+default-features = false
+features = [
+	"chrono",
+	"regex",
+	"json",
+]
+
+[dependencies.rustyline]
+version = "12"
